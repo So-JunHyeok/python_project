@@ -10,9 +10,9 @@ from openai import OpenAI
 api_key = os.getenv("LLM_API_KEY", "YOUR_API_KEY")
 client = OpenAI(api_key=api_key)
 
-# ✅ 두 RAG 엔진 초기화
-doc_rag = DocumentRAG(api_key, r"C:\Users\User\rag_pipeline\faiss_text.index", r"C:\Users\User\rag_pipeline\meta_text.pkl")
-sql_rag = SQLRAG(api_key, r"C:\Users\User\codeTest\codeTest\schema.yaml")
+# ✅ 두 RAG 엔진 초기화 
+doc_rag = DocumentRAG(api_key, r"C:\Users\billion21\Desktop\rag_pipeline\faiss_text.index", r"C:\Users\billion21\Desktop\rag_pipeline\meta_text.pkl")
+sql_rag = SQLRAG(api_key, r"C:\Users\billion21\Desktop\codeTest\schema.yaml")
 
 # ✅ FastAPI 초기화
 app = FastAPI(title="Unified RAG Server")

@@ -56,11 +56,12 @@ class SQLRAG:
         prompt = PromptTemplate(input_variables=["schema", "question"], template=prompt_template)
         sql_chain = LLMChain(llm=self.llm, prompt=prompt)
         sql_query = sql_chain.run(schema=schema_text, question=question)
+        print(self.clean_sql(sql_query))
         return self.clean_sql(sql_query)
 
     def execute_sql(self, sql_query):
         conn = pymysql.connect(
-            host="localhost", user="root", password="1317",
+            host="localhost", user="root", password="1234",
             database="seileng_test", charset="utf8mb4",
             cursorclass=pymysql.cursors.DictCursor
         )
